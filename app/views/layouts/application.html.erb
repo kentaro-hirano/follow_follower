@@ -16,11 +16,16 @@
             <li><%= link_to '新規登録', new_user_registration_path %></li>
             <li><%= link_to 'ログイン', new_user_session_path %></li>
           <% else %>
+            <li><%= link_to 'フォロー一覧', followes_path %></li>
+            <li><%= link_to 'フォロワー一覧', followers_path %></li>
             <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
           <% end %>
         </ul>
       </nav>
     </header>
+    <% if flash[:success] %>
+      <%= flash[:success] %>
+    <% end %>
     <%= yield %>
   </body>
 </html>

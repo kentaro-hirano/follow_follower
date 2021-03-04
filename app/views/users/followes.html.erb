@@ -1,0 +1,5 @@
+<h3>フォロー一覧</h3>
+<% @follows.each do |follow| %>
+  <%= follow.id %>
+  <%= follow.email %>
+<% end %>
